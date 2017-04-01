@@ -1,0 +1,67 @@
+<?php
+	if(isset($_GET['error'])||isset($_GET['error1'])){
+		header('Location : https://www.google.co.in',true,302)
+		$error = $_GET['error'];
+		$error1 = $_GET['error1'];
+		echo $error ;
+		if(isset($_GET['error'])&&isset($_GET['error1'])){
+			?>
+			<script type="text/javascript">
+				alert(<?php echo $error; ?>);
+				$('.errorname').show().html("Please Enter Username");
+				$('.errorpass').show().html("Please Enter Password");
+			</script>
+			<?php
+		}
+		else if(isset($_GET['error'])){
+			?>
+			<script type="text/javascript">
+				$('.errorname').show().html("Please Enter Username");
+			</script>
+			<?php
+		}
+		else (isset($_GET['error1'])){
+			?>
+			<script type="text/javascript">
+				$('.errorpass').show().html("Please Enter Password");
+			</script>
+			<?php
+		}
+	}
+	/*else{
+		?>
+		<script type="text/javascript">
+			$('.errorname').hide();
+			$('.errorpass').hide();
+		</script>
+		<?php
+	}*/
+?>
+
+
+
+
+//return false;
+			//$.post('../login.php' , {username : username , password : password});
+			//$(location).attr('href','../login.php');
+			//		return false;
+			// $.ajax({
+				// type: "POST",
+				// processData: false,
+				// url: "../login.php",
+				// data: { username: username, 
+						// password: password }
+			// });
+			
+			
+			
+			
+
+		/*else{
+			if(empty($username)&&empty($password))
+				header('Location : login/index.html?error=username&error1=password',true,302);
+			else if(empty($username))
+				header('Location : login/index.html?error=username',true,302);
+			else if(empty($password))
+				header('Location : login/index.html?error=password',true,302);
+		}*/
